@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-fileupload.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.1.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+<body>
+
+  <section id="container">
+    <header class="header fixed-top clearfix">
+			<!--logo start-->
+			<div class="brand">
+					<a href="#" class="logo">
+						  <img src="" alt="">
+					</a>
+					<div class="sidebar-toggle-box">
+						  <div class="fa fa-bars"></div>
+					</div>
+			</div>
+			<!--logo end-->
+
+			<div class="top-nav clearfix">
+					<!--search & user info start-->
+					<ul class="nav pull-right top-menu">
+						  <!-- user login dropdown start-->
+						  <li class="dropdown">
+						    <span>My name</span><span> | </span>
+						    <span><a href="/logout">Logout</a></span>
+						  </li>
+						  <!-- user login dropdown end -->
+						  <li>
+						  </li>
+					</ul>
+					<!--search & user info end-->
+			</div>
+    </header>
+    <!-- Header End -->
+
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div tabindex="5000" style="overflow: hidden;" class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a class="active" href="/profile">
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/property-details">
+                        <span>Property details</span>
+                    </a>
+                </li>
+                <li class="sub-menu dcjq-parent-li">
+                    <a href="/buyer-details">
+                        <span>Buyer details</span>
+                    </a>
+                </li>
+                <li class="sub-menu dcjq-parent-li">
+                    <a href="/search">
+                        <span>Search</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar End -->
+
+    <section id="main-content">
+			<section class="wrapper">
+			<div class="row">
+        <div class="col-md-12">
+
+          <section class="panel">
+            <div class="panel-body profile-information">
+
+              <div class="col-md-4" style="margin-top:30px;">
+                <span class="label label-default">Company Logo!</span>
+                <div class="fileupload fileupload-new" data-provides="fileupload" style="margin-top:10px;margin-bottom:30px;">
+                  <div class="fileupload-new thumbnail" style="width: 200px; height: 100px;">
+                    <% if(logo) { %>
+                      <img src="uploads/images/<%= logo %>" style="width:200px;height:100px;" alt="logo">
+                    <% } else { %>
+                      <img src="images/no-image.png" style="width:200px;height:100px;" alt="logo">
+                    <% } %>
+                  </div>
+                  <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                  <form id="uploadlogo" enctype="multipart/form-data" action="/profile" method="post">
+                    <div>
+                      <span class="btn btn-white btn-file">
+                      <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+                      <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                        <input class="default" name="company_logo" type="file">
+                      </span>
+                      <input class="btn btn-primary fileupload-exists" type="submit" value="Upload logo" name="submit">
+                    </div>
+                  </form>
+                </div>
+                <span class="label label-danger">NOTE !</span>
+                <span>
+                  Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only
+                </span>
+              </div>
+
+              <div class="col-md-6">
+                <div class="profile-desk">
+                  <h1>User name</h1>
+                  <span class="text-muted">Edit Details</span>
+
+                  <form action="/profile" method="post">
+                    <div class="form-group">
+                      <label for="username">User Name</label>
+                      <input id="username" class="form-control" type="text" name="username" value="<%= username %>" placeholder="Enter User Name">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input id="email" class="form-control" type="email" name="email" value="<%= email %>" readonly>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input id="password" class="form-control" type="password" name="password" placeholder="********">
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="Save Details" name="submit">
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </section>
+            
+        </div>
+			</section>
+			</div>
+    </section>
+
+  </section>
+
+</body>
+</html>
+
+  <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui-1.10.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/bootstrap-fileupload.js"></script>

@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.1.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+<body>
+
+  <section id="container">
+    <header class="header fixed-top clearfix">
+			<!--logo start-->
+			<div class="brand">
+					<a href="#" class="logo">
+						  <img src="" alt="">
+					</a>
+					<div class="sidebar-toggle-box">
+						  <div class="fa fa-bars"></div>
+					</div>
+			</div>
+			<!--logo end-->
+
+			<div class="top-nav clearfix">
+					<!--search & user info start-->
+					<ul class="nav pull-right top-menu">
+						  <!-- user login dropdown start-->
+						  <li class="dropdown">
+						    <span>My name</span><span> | </span>
+						    <span><a href="/logout">Logout</a></span>
+						  </li>
+						  <!-- user login dropdown end -->
+						  <li>
+						  </li>
+					</ul>
+					<!--search & user info end-->
+			</div>
+    </header>
+    <!-- Header End -->
+
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div tabindex="5000" style="overflow: hidden;" class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a href="/profile">
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/looking-for">
+                        <span>Looking for</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="/buyer-search">
+                        <span>Search</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar End -->
+
+    <section id="main-content">
+			<section class="wrapper">
+			  <div class="row">
+          <div class="col-md-12">
+
+		        <section class="panel">
+		          <div class="panel-body">
+
+		            <div class="col-md-12">
+		              <div class="">
+		                <h1>Search Details</h1>
+
+		                <form action="/buyer-search" method="post">
+
+		                  <div class="col-md-3">
+		                    <div class="form-group">
+		                      <label for="looking_for">Looking for</label>
+													<select class="form-control" name="looking_for">
+														<option value=""> -Select Property type- </option>
+														<option value="Commercial property"> Commercial property </option>
+														<option value="Residential property – Site"> Residential property – Site </option>
+														<option value="Independent villa"> Independent villa </option>
+														<option value="Apartment "> Apartment  </option>
+													</select>
+		                    </div>
+		                  </div>
+
+		                  <div class="col-md-3">
+		                    <div class="form-group">
+		                      <label for="pre-location">Preferred Location</label>
+		                          <select name="pre_location" class="form-control">
+															 <option value=""> -Select- </option>						
+																<optgroup label="Bangalore North">
+																	<option value="Banaswadi">Banaswadi</option>
+																	<option value="HBR layout">HBR layout</option>
+																	<option value="Hebbal">Hebbal</option>
+																	<option value="Hennur">Hennur</option>
+																	<option value="Jakkur">Jakkur</option>
+																	<option value="Jalahalli East">Jalahalli East</option>
+																	<option value="Jalahalli West">Jalahalli West</option>
+																	<option value="Peenya Industrial Area">Peenya Industrial Area</option>
+																	<option value="Sanjeevini Nagar">Sanjeevini Nagar</option>
+																	<option value="Yeshwantpur">Yeshwantpur</option>
+																</optgroup>
+																<optgroup label="Bangalore East">
+																	<option value="Doorvani Nagar">Doorvani Nagar</option>
+																	<option value="Kadugodi Colony">Kadugodi Colony</option>
+																	<option value="Mahadevapura Industrial Area">Mahadevapura Industrial Area</option>
+																	<option value="Sadaramanga Industrial Area">Sadaramanga Industrial Area</option>
+																	<option value="Vimanapura">Vimanapura</option>
+																	<option value="Whitefield">Whitefield</option>
+																</optgroup>
+																<optgroup label="Bangalore South">
+																	<option value="BTM Layout">BTM Layout</option>
+																	<option value="Jayanagar">Jayanagar</option>
+																	<option value="JPNagar">J.P.Nagar</option>
+																	<option value="Koramangala">Koramangala</option>
+																	<option value="Kumaraswamy Layout">Kumaraswamy Layout</option>
+																	<option value="Puttenahalli">Puttenahalli</option>
+																	<option value="RajaRajeshwari Nagar">RajaRajeshwari Nagar</option>
+																</optgroup>            
+																<optgroup label="Bangalore West">
+																	<option value="Basaveshwara Nagar">Basaveshwara Nagar</option>
+																	<option value="Jnana Bharathi">Jnana Bharathi</option>
+																	<option value="Kamakshipalya">Kamakshipalya</option>
+																	<option value="Laggere">Laggere</option>
+																</optgroup>
+																<optgroup label="Bangalore Central">
+																	<option value="Adugodi">Adugodi</option>
+																	<option value="Banashankari">Banashankari</option>
+																	<option value="Chickpet">Chickpet</option>
+																	<option value="Indira Nagar">Indira Nagar</option>
+																	<option value="Rajaji Nagar">Rajaji Nagar</option>
+																	<option value="R.T. Nagar">R.T. Nagar</option>
+																	<option value="Shivaji Nagar">Shivaji Nagar</option>
+																</optgroup>
+		                          </select>
+		                    </div>
+		                  </div>
+
+		                  <div class="col-md-2">
+		                    <div class="form-group">
+		                      <label for="measurement">Measurement</label>
+													<select name="measurement" class="form-control">
+														<option value="600 Sq ft">  20x30 -> 600 Sq ft</option>
+														<option value="750 Sq ft">  25x30 -> 750 Sq ft</option>
+														<option value="800 Sq ft">  40x20 -> 800 Sq ft</option>
+														<option value="1200 Sq ft"> 30x40 -> 1200 Sq ft</option>
+														<option value="2400 Sq ft"> 40x60 -> 2400 Sq ft</option>
+													</select>
+		                    </div>
+		                  </div>
+
+		                  <div class="col-md-3">
+		                    <div class="form-group">
+		                      <label for="budget">Budget</label>
+													<select name="budget" class="form-control">
+														<option value="20 Lac"> Less than 20 Lac </option>
+														<option value="30 Lac"> 20 - 30 Lac </option>
+														<option value="40 Lac"> 30 - 40 Lac </option>
+														<option value="50 Lac"> 40 - 50 Lac </option>
+														<option value="60 Lac"> 50 - 60 Lac </option>
+														<option value="70 Lac"> 60 - 70 Lac </option>
+														<option value="80 Lac"> 70 - 80 Lac </option>
+														<option value="90 Lac"> 80 - 90 Lac </option>
+														<option value="1 Cr"> 90 Lac - 1 Cr </option>
+														<option value="2 Cr"> 1 Cr - 2 Cr </option>
+														<option value="3 Cr"> 2 Cr - 3 Cr </option>
+														<option value="4 Cr"> 3 Cr - 4 Cr </option>
+														<option value="> 4 Cr"> More than  4 Cr </option>
+													</select>
+		                    </div>
+		                  </div>
+		                  
+		                  <div class="col-md-12">
+		                  <button class="btn btn-primary" type="submit">Search</button>
+		                  </div>
+		                </form>
+
+		            </div>
+		          </div>
+		        </section>
+            
+          </div>
+        </div>
+
+			  <div class="row">
+          
+          <div class="col-md-9">
+            <h4>Seller Details</h4>
+		        <section class="panel">
+		          <div class="panel-body">
+
+		            <% if (seller.length > 0) { %>
+                  <% for(var i=0;i<seller.length; i++) { %>
+                    <% var image = seller[i].images; %>
+                       <div class="col-md-12" style="border-bottom:2px solid #eee;">
+                           <div class="profile-desk">
+                               <h3>Seller name : <%= seller[i].seller_name %></h3>
+                               <div class="col-md-6">
+                               <p>Phone No : <%= seller[i].phoneno %></p>
+                               <p>Measurement :  <%= seller[i].measurement %></p>
+                               </div>
+                               <div class="col-md-6">
+                               <p>Expected Price : <%= seller[i].expected_price %></p>
+                               <p>Property Location : <%= seller[i].property_location %></p>
+                               </div>
+                           </div>
+                         <div class="photo-gl" style="margin-bottom:10px;">
+                           <a href="#">
+                             <img src="/uploads/images/<%= image[0] %>" alt="">
+                           </a>
+                           <a href="#">
+                             <img src="/uploads/images/<%= image[1] %>" alt="">
+                           </a>
+                           <a href="#">
+                             <img src="/uploads/images/<%= image[2] %>" alt="">
+                           </a>
+                           <a href="#">
+                             <img src="/uploads/images/<%= image[3] %>" alt="">
+                           </a>
+                         </div>
+                       </div>
+                    
+                  <% } %>
+                <% } else {%>
+
+                  <div class="activity-desk">
+                    <h2>No data found! please search</h2>
+                    <p>Apply preferred filters and click on search button.</p>
+                  </div>
+                <% } %>
+
+		          </div>
+		        </section>
+            
+          </div><!-- End col md 9 -->
+
+        </div><!-- row ends -->
+
+			</section>
+	  </section>
+
+  </section>
+
+
+</body>
+</html>
+
+  <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui-1.10.1.min.js"></script>

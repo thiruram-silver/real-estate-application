@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/dt_bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.1.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+<body>
+
+  <section id="container">
+    <header class="header fixed-top clearfix">
+			<!--logo start-->
+			<div class="brand">
+					<a href="#" class="logo">
+						  <img src="" alt="">
+					</a>
+					<div class="sidebar-toggle-box">
+						  <div class="fa fa-bars"></div>
+					</div>
+			</div>
+			<!--logo end-->
+
+			<div class="top-nav clearfix">
+					<!--search & user info start-->
+					<ul class="nav pull-right top-menu">
+						  <!-- user login dropdown start-->
+						  <li class="dropdown">
+						    <span>My name</span><span> | </span>
+						    <span><a href="/logout">Logout</a></span>
+						  </li>
+						  <!-- user login dropdown end -->
+						  <li>
+						  </li>
+					</ul>
+					<!--search & user info end-->
+			</div>
+    </header>
+    <!-- Header End -->
+
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div tabindex="5000" style="overflow: hidden;" class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a href="/profile">
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="/seller-details">
+                        <span>Property details</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/seller-search">
+                        <span>Search</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar End -->
+
+    <section id="main-content">
+			<section class="wrapper">
+			  <div class="row">
+
+        </div>
+
+			  <div class="row">
+          
+          <div class="col-md-12">
+            <h4>Buyer Details   <a href="/seller-details" class="btn btn-danger">Back</a></h4>
+            <h5><%= buyer.length %> buyers looking for the recent property entered.</h5> 
+		        <section class="panel">
+		          <div class="panel-body">
+		                <div class="adv-table" style="margin-top;10px;">
+		                  <div id="dynamic-table_wrapper" class="dataTables_wrapper form-inline" role="grid">
+		                    <table aria-describedby="dynamic-table_info" class="display table table-bordered table-striped dataTable" id="dynamic-table" border="0" cellpadding="0" cellspacing="0">
+		                      <thead>
+		                        <tr role="row">
+		                          <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending" style="width: 179px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="sorting_asc">Buyer Name</th>
+		                          <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending" style="width: 179px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="sorting_asc">Phone No</th>
+		                          <th aria-label="Browser: activate to sort column ascending" style="width: 250px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="sorting">E-mail</th>
+		                          <th aria-label="Platform(s): activate to sort column ascending" style="width: 219px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="hidden-phone sorting">Preferred Location</th>
+		                          <th aria-label="Engine version: activate to sort column ascending" style="width: 148px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="hidden-phone sorting">Measurement</th>
+		                          <th aria-label="CSS grade: activate to sort column ascending" style="width: 100px;" colspan="1" rowspan="1" aria-controls="hidden-table-info" tabindex="0" role="columnheader" class="hidden-phone sorting">Budget</th>
+		                        </tr>
+		                      </thead>
+		                      <tbody aria-relevant="all" aria-live="polite" role="alert">
+		                      <% if (buyer.length > 0) { %>
+                            <% for(var i=0;i<buyer.length; i++) { %>
+		                        <tr class="gradeA odd">
+		                          <td class="sorting_1"><%= buyer[i].buyer_name %></td>
+		                          <td class="sorting_1"><%= buyer[i].phoneno %></td>
+		                          <td class=" "><%= buyer[i].mailid %></td>
+		                          <td class="hidden-phone "><%= buyer[i].preferred_location %></td>
+		                          <td class="center hidden-phone "><%= buyer[i].measurement %></td>
+		                          <td class="center hidden-phone "><%= buyer[i].budget %></td>
+		                        </tr>
+                            <% } %>
+                          <% } %>
+		                      </tbody>
+		                    </table>
+		                  </div>
+		                </div><!-- adv table -->
+
+		          </div>
+		        </section>
+            
+          </div><!-- End col md 8 -->
+
+        </div>
+
+			</section>
+	  </section>
+
+  </section>
+
+
+</body>
+</html>
+
+  <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui-1.10.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.datatables.js"></script>
+  <script type="text/javascript" src="javascripts/dt_bootstrap.js"></script>
+  <script type="text/javascript" src="javascripts/dtable_init.js"></script>

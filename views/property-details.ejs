@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-fileupload.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-reset.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style-responsive.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.1.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+<body>
+
+  <section id="container">
+    <header class="header fixed-top clearfix">
+			<!--logo start-->
+			<div class="brand">
+					<a href="#" class="logo">
+						  <img src="" alt="">
+					</a>
+					<div class="sidebar-toggle-box">
+						  <div class="fa fa-bars"></div>
+					</div>
+			</div>
+			<!--logo end-->
+
+			<div class="top-nav clearfix">
+					<!--search & user info start-->
+					<ul class="nav pull-right top-menu">
+						  <!-- user login dropdown start-->
+						  <li class="dropdown">
+						    <span>My name</span><span> | </span>
+						    <span><a href="/logout">Logout</a></span>
+						  </li>
+						  <!-- user login dropdown end -->
+						  <li>
+						  </li>
+					</ul>
+					<!--search & user info end-->
+			</div>
+    </header>
+    <!-- Header End -->
+
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <div tabindex="5000" style="overflow: hidden;" class="leftside-navigation">
+            <ul class="sidebar-menu" id="nav-accordion">
+                <li>
+                    <a href="/profile">
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="active" href="/property-details">
+                        <span>Property details</span>
+                    </a>
+                </li>
+                <li class="sub-menu dcjq-parent-li">
+                    <a href="/buyer-details">
+                        <span>Buyer details</span>
+                    </a>
+                </li>
+                <li class="sub-menu dcjq-parent-li">
+                    <a href="/search">
+                        <span>Search</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Sidebar End -->
+
+    <section id="main-content">
+			<section class="wrapper">
+			<div class="row">
+        <div class="col-md-12">
+
+          <section class="panel">
+            <div class="panel-body profile-information">
+
+              <div class="col-md-10">
+									<header class="panel-heading wht-bg">
+										<h4 class="gen-case">
+											Personal Details
+										</h4>
+									</header>
+
+                  <form enctype="multipart/form-data" action="/property-details" method="post">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input id="username" class="form-control" type="text" name="username" placeholder="Enter User Name">
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="age">Age</label>
+												<select class="form-control my-select" name="age" id="age">
+													<option value=""> -Select Age- </option>
+												</select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="phoneno">Phone no</label>
+                        <input id="phoneno" class="form-control" type="text" name="phoneno">
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input id="email" class="form-control" type="email" name="email" placeholder="Enter email">
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="job">Job</label>
+												<select class="form-control" name="job" id="job">
+													<option value=""> -Select Job- </option>
+													<option value="Government"> Government </option>
+													<option value="Private"> Private </option>
+													<option value="Business"> Business </option>
+												</select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="current-location">Current Location</label>
+                            <select name="current_location" class="form-control">							
+														  <optgroup label="Bangalore North">
+																<option value="Banaswadi">Banaswadi</option>
+																<option value="HBR layout">HBR layout</option>
+																<option value="Hebbal">Hebbal</option>
+																<option value="Hennur">Hennur</option>
+																<option value="Jakkur">Jakkur</option>
+																<option value="Jalahalli East">Jalahalli East</option>
+																<option value="Jalahalli West">Jalahalli West</option>
+																<option value="Peenya Industrial Area">Peenya Industrial Area</option>
+																<option value="Sanjeevini Nagar">Sanjeevini Nagar</option>
+																<option value="Yeshwantpur">Yeshwantpur</option>
+															</optgroup>
+															<optgroup label="Bangalore East">
+																<option value="Doorvani Nagar">Doorvani Nagar</option>
+																<option value="Kadugodi Colony">Kadugodi Colony</option>
+																<option value="Mahadevapura Industrial Area">Mahadevapura Industrial Area</option>
+																<option value="Sadaramanga Industrial Area">Sadaramanga Industrial Area</option>
+																<option value="Vimanapura">Vimanapura</option>
+																<option value="Whitefield">Whitefield</option>
+															</optgroup>
+															<optgroup label="Bangalore South">
+																<option value="BTM Layout">BTM Layout</option>
+																<option value="Jayanagar">Jayanagar</option>
+																<option value="JPNagar">J.P.Nagar</option>
+																<option value="Koramangala">Koramangala</option>
+																<option value="Kumaraswamy Layout">Kumaraswamy Layout</option>
+																<option value="Puttenahalli">Puttenahalli</option>
+																<option value="RajaRajeshwari Nagar">RajaRajeshwari Nagar</option>
+															</optgroup>            
+															<optgroup label="Bangalore West">
+																<option value="Basaveshwara Nagar">Basaveshwara Nagar</option>
+																<option value="Jnana Bharathi">Jnana Bharathi</option>
+																<option value="Kamakshipalya">Kamakshipalya</option>
+																<option value="Laggere">Laggere</option>
+															</optgroup>
+															<optgroup label="Bangalore Central">
+																<option value="Adugodi">Adugodi</option>
+																<option value="Banashankari">Banashankari</option>
+																<option value="Chickpet">Chickpet</option>
+																<option value="Indira Nagar">Indira Nagar</option>
+																<option value="Rajaji Nagar">Rajaji Nagar</option>
+																<option value="R.T. Nagar">R.T. Nagar</option>
+																<option value="Shivaji Nagar">Shivaji Nagar</option>
+															</optgroup>
+                            </select>
+                      </div>
+                    </div>
+              </div>
+              <div class="col-md-10">
+									<header class="panel-heading wht-bg">
+										<h4 class="gen-case">
+											Property Details
+										</h4>
+									</header>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="current-location">Property Location</label>
+                            <select name="pro_location" class="form-control">							
+														  <optgroup label="Bangalore North">
+																<option value="Banaswadi">Banaswadi</option>
+																<option value="HBR layout">HBR layout</option>
+																<option value="Hebbal">Hebbal</option>
+																<option value="Hennur">Hennur</option>
+																<option value="Jakkur">Jakkur</option>
+																<option value="Jalahalli East">Jalahalli East</option>
+																<option value="Jalahalli West">Jalahalli West</option>
+																<option value="Peenya Industrial Area">Peenya Industrial Area</option>
+																<option value="Sanjeevini Nagar">Sanjeevini Nagar</option>
+																<option value="Yeshwantpur">Yeshwantpur</option>
+															</optgroup>
+															<optgroup label="Bangalore East">
+																<option value="Doorvani Nagar">Doorvani Nagar</option>
+																<option value="Kadugodi Colony">Kadugodi Colony</option>
+																<option value="Mahadevapura Industrial Area">Mahadevapura Industrial Area</option>
+																<option value="Sadaramanga Industrial Area">Sadaramanga Industrial Area</option>
+																<option value="Vimanapura">Vimanapura</option>
+																<option value="Whitefield">Whitefield</option>
+															</optgroup>
+															<optgroup label="Bangalore South">
+																<option value="BTM Layout">BTM Layout</option>
+																<option value="Jayanagar">Jayanagar</option>
+																<option value="JPNagar">J.P.Nagar</option>
+																<option value="Koramangala">Koramangala</option>
+																<option value="Kumaraswamy Layout">Kumaraswamy Layout</option>
+																<option value="Puttenahalli">Puttenahalli</option>
+																<option value="RajaRajeshwari Nagar">RajaRajeshwari Nagar</option>
+															</optgroup>            
+															<optgroup label="Bangalore West">
+																<option value="Basaveshwara Nagar">Basaveshwara Nagar</option>
+																<option value="Jnana Bharathi">Jnana Bharathi</option>
+																<option value="Kamakshipalya">Kamakshipalya</option>
+																<option value="Laggere">Laggere</option>
+															</optgroup>
+															<optgroup label="Bangalore Central">
+																<option value="Adugodi">Adugodi</option>
+																<option value="Banashankari">Banashankari</option>
+																<option value="Chickpet">Chickpet</option>
+																<option value="Indira Nagar">Indira Nagar</option>
+																<option value="Rajaji Nagar">Rajaji Nagar</option>
+																<option value="R.T. Nagar">R.T. Nagar</option>
+																<option value="Shivaji Nagar">Shivaji Nagar</option>
+															</optgroup>
+                            </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="type-of-property">Type of property</label>
+												<select class="form-control" name="type_of_property">
+													<option value=""> -Select Property type- </option>
+													<option value="Commercial property"> Commercial property </option>
+													<option value="Residential property – Site"> Residential property – Site </option>
+													<option value="Independent villa"> Independent villa </option>
+													<option value="Apartment "> Apartment  </option>
+												</select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="measurement_of_property">Measurement of the property</label>
+													<select name="measurement_of_property" class="form-control">
+														<option value="600 Sq ft">  20x30 -> 600 Sq ft</option>
+														<option value="750 Sq ft">  25x30 -> 750 Sq ft</option>
+														<option value="800 Sq ft">  40x20 -> 800 Sq ft</option>
+														<option value="1200 Sq ft"> 30x40 -> 1200 Sq ft</option>
+														<option value="2400 Sq ft"> 40x60 -> 2400 Sq ft</option>
+													</select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="expected_price_for_property">Expected price for the property</label>
+													<select name="expected_price_for_property" class="form-control">
+														<option value="20 Lac"> Less than 20 Lac </option>
+														<option value="30 Lac"> 20 - 30 Lac </option>
+														<option value="40 Lac"> 30 - 40 Lac </option>
+														<option value="50 Lac"> 40 - 50 Lac </option>
+														<option value="60 Lac"> 50 - 60 Lac </option>
+														<option value="70 Lac"> 60 - 70 Lac </option>
+														<option value="80 Lac"> 70 - 80 Lac </option>
+														<option value="90 Lac"> 80 - 90 Lac </option>
+														<option value="1 Cr"> 90 Lac - 1 Cr </option>
+														<option value="2 Cr"> 1 Cr - 2 Cr </option>
+														<option value="3 Cr"> 2 Cr - 3 Cr </option>
+														<option value="4 Cr"> 3 Cr - 4 Cr </option>
+														<option value="> 4 Cr"> More than  4 Cr </option>
+													</select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label for="reason_for_selling">Reason for selling</label>
+												<select class="form-control" name="reason_for_selling">
+													<option value=""> -Select Reason for selling- </option>
+													<option value="Reinvestment"> Reinvestment </option>
+													<option value="Meet expenses – building new house"> Meet expenses – building new house </option>
+													<option value="Other expenses"> Other expenses </option>
+												</select>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12" style="margin-left:-10px;">
+                      <!-- Image 1 -->
+						          <div class="fileupload fileupload-new col-md-3" data-provides="fileupload" style="margin-top:10px;margin-bottom:30px;">
+						            <div class="fileupload-new thumbnail" style="width:200px;height:150px;">
+                          <img src="images/no-image.png" style="width:200px;height:150px;" alt="logo">
+						            </div>
+						            <div class="fileupload-preview fileupload-exists thumbnail" style="width:200px;height:150px;line-height:20px;">
+                        </div>
+						              <div>
+						                <span class="btn btn-white btn-file">
+						                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+						                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+						                  <input class="default" name="property_image" type="file">
+						                </span>
+						              </div>
+						          </div>
+                      <!-- Image 2 -->
+						          <div class="fileupload fileupload-new col-md-3" data-provides="fileupload" style="margin-top:10px;margin-bottom:30px;">
+						            <div class="fileupload-new thumbnail" style="width:200px;height:150px;">
+                          <img src="images/no-image.png" style="width:200px;height:150px;" alt="logo">
+						            </div>
+						            <div class="fileupload-preview fileupload-exists thumbnail" style="width:200px;height:150px;line-height:20px;">
+                        </div>
+						              <div>
+						                <span class="btn btn-white btn-file">
+						                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+						                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+						                  <input class="default" name="property_image" type="file">
+						                </span>
+						              </div>
+						          </div>
+                      <!-- Image 3 -->
+						          <div class="fileupload fileupload-new col-md-3" data-provides="fileupload" style="margin-top:10px;margin-bottom:30px;">
+						            <div class="fileupload-new thumbnail" style="width:200px;height:150px;">
+                          <img src="images/no-image.png" style="width:200px;height:150px;" alt="logo">
+						            </div>
+						            <div class="fileupload-preview fileupload-exists thumbnail" style="width:200px;height:150px;line-height:20px;">
+                        </div>
+						              <div>
+						                <span class="btn btn-white btn-file">
+						                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+						                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+						                  <input class="default" name="property_image" type="file">
+						                </span>
+						              </div>
+						          </div>
+                      <!-- Image 4 -->
+						          <div class="fileupload fileupload-new col-md-3" data-provides="fileupload" style="margin-top:10px;margin-bottom:30px;">
+						            <div class="fileupload-new thumbnail" style="width:200px;height:150px;">
+                          <img src="images/no-image.png" style="width:200px;height:150px;" alt="logo">
+						            </div>
+						            <div class="fileupload-preview fileupload-exists thumbnail" style="width:200px;height:150px;line-height:20px;">
+                        </div>
+						              <div>
+						                <span class="btn btn-white btn-file">
+						                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> Select image</span>
+						                <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+						                  <input class="default" name="property_image" type="file">
+						                </span>
+						              </div>
+						          </div>
+
+                    </div>
+
+                    <div class="col-md-8">
+                    <input class="btn btn-primary fileupload-exists" type="submit" value="Save-details" name="pro_details">
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </section>
+            
+        </div>
+			</section>
+			</div>
+    </section>
+
+  </section>
+
+</body>
+</html>
+
+  <script type="text/javascript" src="javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-ui-1.10.1.min.js"></script>
+  <script type="text/javascript" src="javascripts/bootstrap-fileupload.js"></script>
+
+<script>
+$(document).ready(function() {
+
+  /////////// Form table //////////
+	$(window).load(function(){
+		$( document ).ready(function() {
+		  //select options for spending amount
+		  select = document.querySelectorAll("select.my-select");
+		  var selCount = select.length;
+		  for(var sC=0; sC<selCount; sC++){
+		    //loop for 100 to 1000
+		    for (var i = 15; i<=100; i++){
+		      var opt = document.createElement('option');
+		      var x = 1;
+		      x = x*i;
+		      opt.value = x;
+		      opt.innerHTML = x;
+		      select[sC].appendChild(opt);
+		    }
+		  }
+		});
+	});
+
+});
+</script>

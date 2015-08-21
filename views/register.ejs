@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/font-awesome.min.css" />
+</head>
+<body>
+	<div class="login-page">
+		<div class="header-section">
+			<a href="#"><img src="images/loginlogo.png" alt=""></a>
+			<ul class="menu">
+				<li><a href="/">Login</a></li>
+			</ul>
+		</div><!--end of header -section-->
+		<div class="form-section">
+			<div class="container">
+
+				<div class="form-inputs">
+          <!-- show any messages that come back with authentication -->
+          <% if (message.length > 0) { %>
+            <h4 style="color:#F54747;"><strong><%= message %></strong></h4>
+          <% } %>
+					<h4>Registration Area</h4>
+          <form id="form-signup" class="form-signup" action="/register" method="post">
+						<label class="radio-inline">
+						<input id="inlineradio1" type="radio" name="role" value="buyer">
+						Buyer
+						</label>
+						<label class="radio-inline" style="margin-left:10px;">
+						<input id="inlineradio2" type="radio" name="role" value="seller">
+						Seller
+						</label>
+						<div class="input-group" style="margin-top:10px;">
+							<input type="text" class="form-control" name="email" placeholder="E-mail ID">
+							<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						</div>
+						<div class="input-group">
+							<input type="password" class="form-control" name="password" placeholder="Password">
+							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						</div>
+						<div class="input-group">
+							<input type="password" class="form-control" name="password-confirm" placeholder="Confirm Password">
+							<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						</div>
+						<button type="submit" class="btn btn-info pull-right">Register</button>
+          </form>
+				</div>				
+			</div>
+		</div><!--emd of form-section-->
+		<div class="footer">
+			<p>Copyrights &copy; <a href="#"><strong>Binarytechies 2015</strong></a> - All Rights Reserved</p>
+			<ul class="pull-right">
+				<li><a href="#">Privacy & Terms</a></li>
+				<li><a href="#">Help</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</div>
+	</div><!--cnd of login-page-->
+	
+</body>
+</html>
